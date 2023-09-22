@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="feature-image">
+        <img src="image.jpg" alt="" width="500px" height="500px" />
+        <img
+          src="play-button.png"
+          alt=""
+          class="play-btn"
+          onclick="playVideo('explainer-video.mp4')"
+        />
+      </div>
+      <div class="image-text">
+        <h3>Sharan Hegde</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, velit
+        exercitationem nostrum quis enim iusto cupiditate quas sunt fugiat?
+        Culpa molestiae laborum quia vero.</p>
+        <h4><span style="color: grey;">Prasun</span></h4>
+      </div>
+    </div>
+    <div class="video-player" id="videoPlayer">
+      <video width="100%" controls autoplay id="myVideo">
+        <source src="explainer-video.mp4" type="video/mp4" />
+      </video>
+      <img src="cross-png.jpg" alt="" class="close-btn" onclick="stopVideo()" />
+    </div>
+
+    <script>
+      let videoPlayer = document.getElementById("videoPlayer");
+      let myVideo = document.getElementById("myVideo");
+
+      function stopVideo() {
+        videoPlayer.style.display = "none";
+        myVideo.muted = true;
+      }
+
+      function playVideo(file) {
+        myVideo.src = file;
+        videoPlayer.style.display = "block";
+        myVideo.muted = false;
+      }
+    </script>
+  </body>
+</html>
